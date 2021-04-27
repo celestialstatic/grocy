@@ -18,4 +18,4 @@ while [ "$1" != "" ]; do
 done
 
 docker build -t grocy:dev -f ./Dockerfile.dev .
-docker run -p 8000:80 -v $DIR:/var/www/html -e DATA_UID=$DATA_UID -e CLEAN=$CLEAN grocy:dev
+docker run -p 8090:80 -v $DIR:/var/www/html -e DATA_UID=$DATA_UID -e CLEAN=$CLEAN grocy:dev
