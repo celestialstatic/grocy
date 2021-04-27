@@ -205,6 +205,8 @@ class StockService extends BaseService
 				'shopping_list_id' => $listId,
 				'note' => $note
 			]);
+
+			return $alreadyExistingEntry->id;
 		}
 		else
 		{ // Insert
@@ -215,6 +217,8 @@ class StockService extends BaseService
 				'note' => $note
 			]);
 			$shoppinglistRow->save();
+
+			return $shoppinglistRow->id;
 		}
 	}
 

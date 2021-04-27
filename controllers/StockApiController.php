@@ -200,8 +200,10 @@ class StockApiController extends BaseApiController
 				throw new \Exception('No product id was supplied');
 			}
 
-			$this->getStockService()->AddProductToShoppingList($productId, $amount, $note, $listId);
-			return $this->EmptyApiResponse($response);
+			$id = $this->getStockService()->AddProductToShoppingList($productId, $amount, $note, $listId);
+
+			$data = array('id' => $id);
+			return $this->ApiResponse($response, $data);
 		}
 		catch (\Exception $ex)
 		{
